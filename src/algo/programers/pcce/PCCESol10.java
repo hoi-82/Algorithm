@@ -1,4 +1,4 @@
-package algo;
+package algo.programers.pcce;
 
 import java.util.Collections;
 import java.util.Comparator;
