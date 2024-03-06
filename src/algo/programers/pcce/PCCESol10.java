@@ -1,6 +1,7 @@
 package algo.programers.pcce;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class PCCESol10 {
         int extIndex = getIndexNum(ext);
         int sortIndex = getIndexNum(sort_by);
 
-        List<int[]> list = new ArrayList<>();
-        for(int[] d : data) if(d[extIndex] < val_ext) list.add(d);
+        List<int[]> list = new ArrayList<>(Arrays.stream(data)
+                .filter(unit -> unit[extIndex] < val_ext)
+                .toList());
 
         list.sort(Comparator.comparingInt(o -> o[sortIndex]));
 
