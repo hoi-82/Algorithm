@@ -3,6 +3,13 @@ package algo.kakao.winter.internship;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 2024 Kakao Winter Internship CodingTest
+ * 가장 많이 받은 선물 Lv1
+ *
+ * @author hoi-82
+ * @link <a href="https://school.programmers.co.kr/learn/courses/30/lessons/258712"/>
+ */
 public class MostReceivedGift {
     public int solution(String[] friends, String[] gifts) {
         int answer = 0;
@@ -42,7 +49,7 @@ public class MostReceivedGift {
         return answer;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         String[] friends = {"muzi", "ryan", "frodo", "neo"};
         String[] gifts = {"muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"};
 

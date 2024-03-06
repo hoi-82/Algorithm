@@ -1,13 +1,16 @@
 package algo.programers.pcce;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.ArrayList;
 
+/**
+ * PCCESol10 기출문제 LV0
+ *
+ */
 public class PCCESol10 {
     public int[][] solution(int[][] data, String ext, int val_ext, String sort_by) {
-        int[][] answer = {};
+        int[][] answer;
 
         int extIndex = getIndexNum(ext);
         int sortIndex = getIndexNum(sort_by);
@@ -15,14 +18,7 @@ public class PCCESol10 {
         List<int[]> list = new ArrayList<>();
         for(int[] d : data) if(d[extIndex] < val_ext) list.add(d);
 
-        Collections.sort(list, new Comparator<>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                if(o1[sortIndex] < o2[sortIndex]) {
-                    return -1;
-                }else return 1;
-            }
-        });
+        list.sort(Comparator.comparingInt(o -> o[sortIndex]));
 
         answer = new int[list.size()][4];
         for(int i=0; i<list.size(); i++) answer[i] = list.get(i);
@@ -52,5 +48,26 @@ public class PCCESol10 {
         }
 
         return index;
+    }
+
+    public static void main(String[] args) {
+        PCCESol10 solution = new PCCESol10();
+
+        int[][] data = {{1, 20300104, 100, 80},{2, 20300804, 847, 37},{3, 20300401, 10, 8}};
+        String ext = "date";
+        int val_ext = 20300501;
+        String sort_by = "remain";
+
+        int[][] result = solution.solution(data, ext, val_ext, sort_by);
+
+        System.out.print("[");
+        for (int[] r : result) {
+            System.out.print(" [");
+            for (int num : r) {
+                System.out.print(num + ", ");
+            }
+            System.out.print("],");
+        }
+        System.out.print("]");
     }
 }
