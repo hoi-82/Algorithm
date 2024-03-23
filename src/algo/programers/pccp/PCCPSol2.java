@@ -4,9 +4,9 @@ import java.util.*;
 
 /**
  * PCCPSol2 기출문제 LV2
- *
+ * 석유 시추
  */
-public class OilDrilling {
+public class PCCPSol2 {
     private static final int[] DX = {1,0,-1,0};
     private static final int[] DY = {0,1,0,-1};
 
@@ -65,7 +65,7 @@ public class OilDrilling {
     }
 
     public static void main(String[] args) {
-        OilDrilling oilDrilling = new OilDrilling();
+        PCCPSol2 oilDrilling = new PCCPSol2();
         int[][] land = {{0, 0, 0, 1, 1, 1, 0, 0}
                     , {0, 0, 0, 0, 1, 1, 0, 0}
                     , {1, 1, 0, 0, 0, 1, 1, 0}
